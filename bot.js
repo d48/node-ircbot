@@ -1,20 +1,15 @@
-var irc = require('irc');
-var config = require(path.join('config','config.json'));
-
-// var config = {
-//     channels: ["#tainthorse"],
-//     server: "irc.freenode.net",
-//     botName: "horsie"
-// };
+var irc = require('irc')
+    , path = require('path')
+    , config = require(path.join(__dirname, 'config', 'config.json'))
+    , log = console.log
+    ;
 
 var bot = new irc.Client(config.server, config.botName, {
     channels: config.channels
 });
 
 bot.addListener('join', function(channel, who) {
-    bot.say(channel, who + ", sup homie, what's poppin?");
-});
-
-bot.addListener("message", function(from, to, text, message) {
-    bot.say(from, "What mang?");
+    var msg = who + ", up homie";
+    bot.say(channel, msg);
+    log(msg);
 });

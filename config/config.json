@@ -1,7 +1,7 @@
 {
-    channels: ["#tainthorse"],
-    server: "irc.freenode.net",
-    botName: "horsie"
+    "channels": ["#tainthorse"],
+    "server": "irc.freenode.net",
+    "botName": "horsie"
 }
 
 
